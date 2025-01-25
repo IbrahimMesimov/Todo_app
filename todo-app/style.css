@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+:root {
+  --accent: #022f49bd;
+  --default: rgba(0, 0, 0, 0.3);
+}
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", serif;
+  background-color: var(--accent);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 32px;
+  font-size: 18px;
+  font-weight: 300;
+}
+.todo {
+  padding: 32px;
+  background-color: #fff;
+  width: 90vw;
+  border-radius: 16px;
+}
+.todo_content {
+}
+.todo_title {
+}
+.todo_new {
+  --size: 50px;
+  display: flex;
+  margin: 16px 0;
+}
+.todo_new input {
+  margin-right: 16px;
+  font-size: 18px;
+  padding: 8px 16px;
+  height: var(--size);
+  border-radius: 5px;
+  border: 1px solid var(--default);
+  flex-grow: 1;
+}
+.todo_add,
+.todo_task-del {
+  text-align: center;
+  cursor: pointer;
+  width: var(--size);
+  height: var(--size);
+  border-radius: var(--size);
+  line-height: calc(var(--size) * 0.95);
+  font-size: 32px;
+  font-weight: 200;
+  background: var(--accent);
+  color: #fff;
+}
+.todo_list {
+  margin-top: 16px;
+}
+.todo_list > *:not(:last-child) {
+  margin-bottom: 8px;
+}
+.todo_task {
+  cursor: default;
+  --size: 36px;
+  min-height: var(--size);
+  display: flex;
+  align-items: center;
+}
+.todo_task:hover .todo_task-del {
+  display: block;
+}
+.todo_task_complete .todo_task-text {
+  text-decoration: line-through;
+  color: var(--default);
+}
+.todo_checkbox {
+  margin-right: 16px;
+}
+.todo_checkbox input {
+  display: none;
+}
+.todo_checkbox input:checked + div {
+  background-color: var(--accent);
+}
+.todo_checkbox input:checked + div::after {
+  display: block;
+}
+.todo_checkbox div {
+  --size: 28px;
+  cursor: pointer;
+  height: var(--size);
+  width: var(--size);
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  position: relative;
+  color: #fff;
+}
+.todo_checkbox div::after {
+  content: "✔";
+  text-align: center;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.todo_task-text {
+  font-size: 20px;
+}
+.todo_task-del {
+  display: none;
+  margin-left: auto;
+  margin-right: 0;
+  font-size: 44px;
+  line-height: calc(var(--size) * 0.8);
+}
